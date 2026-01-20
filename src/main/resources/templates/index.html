@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Rabbit Hole</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      color: #ff0404;
+    }
+
+    button {
+      background-color: transparent;
+      color: red;
+      border: 1px solid red;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #65635e;
+      color: black;
+    }
+
+    .ascii-container {
+      position: fixed;
+      bottom: 20px;
+      right: 60px;
+      color: white; /* ASCII Art Beyaz */
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      text-align: left;
+      opacity: 0.9;
+      white-space: pre;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Welcome to the Rabbit Hole</h1>
+<p>Continue entering your safe burrow.</p>
+
+<a href="/login"><button>Login</button></a>
+<br>
+<a href="/register"><button>Register</button></a>
+
+<div class="ascii-container">
+<pre>
+        ⠀⠀⠀⠀⠀⠀⣰⣒⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⢤⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡗⠀⡑⠳⡄⠀⠀⠀⠀⠀⢀⡴⠓⠁⠈⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⢸⠈⢆⠹⡄⠀⠀⠀⢀⡞⣠⠊⢱⢠⠇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡜⡀⠈⡆⢳⠀⠀⠀⡞⢠⠋⠀⡌⡼
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡵⡀⢸⠘⡇⠀⢸⢁⣇⠀⣴⡼⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⡷⠵⠓⠓⠒⠏⣸⢠⣼⠟
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠉⠀⠀⠀⠀⠀ ⠀⠛⢧
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣶⣤⠀⠀⠀⠀⣠⣤⢤⡀⠈⢧
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣹⣷⣿⠀⠀⠀⢰⣧⡿⣷⡇⠀⠘⡆
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠤⠄⠠⣿⣤⣍⡉⣤⣤⠀⠀⠛⣻⣿⣤⡄⢠⠿⠶⠒⢲⡦⢤⣀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢉⠥⠚⠳⣉⠘⠚⠦⠆⠀⠀⠈⠐⠒⣢⠏⣉⠁⠀⠀  ⠀⠉⠚⠗⢦⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⠖⠤⠤⠤⠄⠔⡶⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀    ⠀⠀⠳⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡖⠀⠀⠀⠀⠀⡃⠀⠀⠀⠀⠀⢀⠤⠒⠒⠀⠀⠀    ⠀⢹⡤⣄⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠧⡆⠀⠀⠀⢀⠇⠀⠀⠀⠀⡰⣃⠐⠀⠀⠀⠀⠀⠀   ⠀⡇⠁⢹⠄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣧⣀⠀⡌⠀⠀⠀⡠⠀⡇⠀⠀⠀⠀⠀⠀⠀   ⠀⡇⠀⣹
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠑⡝⡇⠀⠀⢠⠏⠒⢣⠀⠀⠀⠀⠀⠀⠀⠀ ⣸⣀⡼⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣯⢀⡼⠀⠀⣠⠟⢲⡤⠤⠵⠤⠄⠀⠀⢀⣠⠞⠁
+version 0.8.0 ⠀⠀⠀⠀⠀⠙⠛⠻⠽⠷⠞⠁⠀⠿⠷⠧⠤⠤⠤⠶⠖⠒⠃
+</pre>
+</div>
+
+</body>
+</html>
