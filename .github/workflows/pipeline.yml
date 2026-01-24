@@ -10,6 +10,22 @@ jobs:
   build-test-and-scan:
     runs-on: ubuntu-latest
 
+    # BURASI ÇOK KRİTİK: Testlerin çalışması için Postgres'i GitHub açacak
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: ${{ secrets.DB_USERNAME }}
+          POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          POSTGRES_DB: safe_database
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
       - uses: actions/checkout@v4
 
@@ -20,8 +36,15 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      # Testleri koştururken veritabanı şifrelerini kasadan (secrets) alıyoruz
       - name: Build and Test with Maven
         run: mvn clean verify
+        env:
+          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/safe_database
+          SPRING_DATASOURCE_USERNAME: ${{ secrets.DB_USERNAME }}
+          SPRING_DATASOURCE_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          CHAPTHA_HTML_API: ${{ secrets.CHAPTHA_HTML_API }}
+          CHAPTHA_API: ${{ secrets.CHAPTHA_API }}
 
       - name: Upload JaCoCo Report
         if: always()
@@ -37,6 +60,5 @@ jobs:
           project: 'Rabbit-Hole'
           path: '.'
           format: 'HTML'
-          # Eğer çok kritik bir açık bulursa build'i durdurur
           args: >
             --failOnCVSS 7
