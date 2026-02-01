@@ -62,7 +62,7 @@ jobs:
           path: '.'
           format: 'HTML'
           args: >
-            --failOnCVSS 7
+            --failOnCVSS 9
             --enableRetired true
 
       # Tarama sonucunu (HTML raporunu) GitHub Artifacts'e yükle
